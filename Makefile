@@ -109,18 +109,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/Cellar/cmake/3.18.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/local/Cellar/cmake/3.18.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -142,6 +130,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.18.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.18.4/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -187,19 +187,6 @@ test: cmake_check_build_system
 test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
-
-#=============================================================================
-# Target rules for targets named unit-test
-
-# Build rule for target.
-unit-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit-test
-.PHONY : unit-test
-
-# fast build rule for target.
-unit-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit-test.dir/build.make CMakeFiles/unit-test.dir/build
-.PHONY : unit-test/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -259,7 +246,7 @@ unit_test.o: unit_test.cpp.o
 
 # target to build an object file
 unit_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit-test.dir/build.make CMakeFiles/unit-test.dir/unit_test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.o
 .PHONY : unit_test.cpp.o
 
 unit_test.i: unit_test.cpp.i
@@ -268,7 +255,7 @@ unit_test.i: unit_test.cpp.i
 
 # target to preprocess a source file
 unit_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit-test.dir/build.make CMakeFiles/unit-test.dir/unit_test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.i
 .PHONY : unit_test.cpp.i
 
 unit_test.s: unit_test.cpp.s
@@ -277,7 +264,7 @@ unit_test.s: unit_test.cpp.s
 
 # target to generate assembly for a file
 unit_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit-test.dir/build.make CMakeFiles/unit-test.dir/unit_test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/unit_test.cpp.s
 .PHONY : unit_test.cpp.s
 
 # Help Target
@@ -297,7 +284,6 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... test"
-	@echo "... unit-test"
 	@echo "... unit_test.o"
 	@echo "... unit_test.i"
 	@echo "... unit_test.s"

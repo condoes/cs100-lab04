@@ -1,11 +1,10 @@
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/install/strip.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/install.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/list_install_components.dir
-/Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/install/local.dir
-/Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/test.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/rebuild_cache.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/edit_cache.dir
-/Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/unit-test.dir
+/Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/install/local.dir
+/Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/CMakeFiles/test.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/googletest/CMakeFiles/install/local.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/googletest/CMakeFiles/install/strip.dir
 /Users/cindydo/lab-04---composite-pattern-cdo032-galva041-lab4/googletest/CMakeFiles/install.dir
