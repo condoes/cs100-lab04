@@ -7,7 +7,7 @@
 
 class Pow : public Base {
     private: 
-        double base;
+        double base; 
         double exponent;
     public:
         Pow(double base, double exp) : Base() { 
