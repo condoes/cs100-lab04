@@ -13,16 +13,19 @@
 TEST(OpTest, OpEvaluateNonZero) {
     Op* test = new Op(8);
     EXPECT_EQ(test->evaluate(), 8);
+    EXPECT_EQ(test->stringify(), "8.000000");
 }
 
 TEST(MultTest, MultEvaluateNonZero) {
     Mult* test = new Mult(3,2);
     EXPECT_EQ(test->evaluate(), 6);
+    EXPECT_EQ(test->stringify(), "3.000000 * 2.000000");
 }
 
 TEST(DivTest, DivEvaluateNonZero) {
     Div* test = new Div(6,2);
     EXPECT_EQ(test->evaluate(), 3);
+    EXPECT_EQ(test->stringify(), "6.000000 / 2.000000");
 }
 
 TEST(AddTest, AddEvalNonZero) {
