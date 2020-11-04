@@ -31,16 +31,19 @@ TEST(DivTest, DivEvaluateNonZero) {
 TEST(AddTest, AddEvalNonZero) {
     Add* test = new Add(3,7);
     EXPECT_EQ(test->evaluate(), 10);
+    EXPECT_EQ(test->stringify(), "3.000000 + 7.000000");
 }
 
 TEST(SubTest, AddEvalNonZero) {
     Sub* test = new Sub(9,3);
     EXPECT_EQ(test->evaluate(), 6);
+    EXPECT_EQ(test->stringify(), "9.000000 - 3.000000");
 }
 
 TEST(PowTest, AddEvalNonZero) {
     Pow* test = new Pow(5,2);
     EXPECT_EQ(test->evaluate(), 25);
+    EXPECT_EQ(test->stringify(), "5.000000 ** 2.000000");
 }
 
 #endif //__OP_TEST_HPP__
