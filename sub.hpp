@@ -6,7 +6,7 @@
 
 class Sub : public Base {
     private: 
-        double firstVal;
+        double firstVal; 
         double secondVal;
     public:
         Sub(double value1, double value2) : Base() { 
