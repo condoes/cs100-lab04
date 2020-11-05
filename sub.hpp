@@ -7,10 +7,10 @@
 
 class Sub : public Base {
     private: 
-        Op* firstVal; 
-        Op* secondVal;
+        Base* firstVal; 
+        Base* secondVal;
     public:
-        Sub(Op* value1, Op* value2) : Base() { 
+        Sub(Base* value1, Base* value2) : Base() { 
             firstVal = value1;
             secondVal = value2; 
         }
