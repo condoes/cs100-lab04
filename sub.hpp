@@ -2,20 +2,21 @@
 #define __SUB_HPP__
 
 #include "base.hpp"
+#include "op.hpp"
 #include <string>
 
 class Sub : public Base {
     private: 
-        double firstVal; 
-        double secondVal;
+        Op* firstVal; 
+        Op* secondVal;
     public:
-        Sub(double value1, double value2) : Base() { 
+        Sub(Op* value1, Op* value2) : Base() { 
             firstVal = value1;
             secondVal = value2; 
         }
-        virtual double evaluate() { return firstVal-secondVal; }
-        virtual std::string stringify() { 
-            std::string str = std::to_string(firstVal) + " - " + std::to_string(secondVal);
+        double evaluate() { return firstVal->evaluate() - secondVal->evaluate(); }
+        std::string stringify() { 
+            std::string str = firstVal->stringify() + " - " + secondVal->stringify();
             return str;
         }
 };
