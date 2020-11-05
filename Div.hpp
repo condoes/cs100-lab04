@@ -2,22 +2,23 @@
 #define __DIV_HPP__
 
 #include "base.hpp"
+#include "op.hpp"
 #include <string>
 
 class Div : public Base {
     private: 
-        double v1, v2, result;
+        Base* v1;
+        Base* v2;
     public:
-        Div(double val1, double val2) : Base() { 
+        Div(Base* val1, Base* val2) : Base() { 
             v1 = val1; 
             v2 = val2;
-            result = v1 / v2;
         }
-        virtual double evaluate() { return result; }
-        virtual std::string stringify() { 
-            std::string myString = std::to_string(v1) + " / " + std::to_string(v2);
+        double evaluate() { return v1->evaluate() / v2->evaluate(); }
+        std::string stringify() { 
+            std::string myString = v1->stringify() + " / " + v2->stringify();
             return myString; 
         }
 };
 
-#endif //__DIV_HPP__
+#endif // __DIV_HPP__
