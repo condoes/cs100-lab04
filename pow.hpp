@@ -8,15 +8,15 @@
 
 class Pow : public Base {
     private: 
-        Op* base; 
-        Op* exponent;
+        Base* base; 
+        Base* exponent;
     public:
-        Pow(Op* base, Op* exp) : Base() { 
+        Pow(Base* base, Base* exp) : Base() { 
             this->base = base;
             exponent = exp; 
         }
-        virtual double evaluate() { return pow(base->evaluate(), exponent->evaluate()); }
-        virtual std::string stringify() { 
+        double evaluate() { return pow(base->evaluate(), exponent->evaluate()); }
+        std::string stringify() { 
             std::string str = base->stringify() + " ** " + exponent->stringify();
             return str;
         }
