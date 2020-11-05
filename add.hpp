@@ -7,10 +7,10 @@
 
 class Add : public Base{
     private: 
-        Op* firstVal; 
-        Op* secondVal;
+        Base* firstVal; 
+        Base* secondVal;
     public:
-        Add(Op* value1, Op* value2) : Base() { 
+        Add(Base* value1, Base* value2) : Base() { 
             firstVal = value1;
             secondVal = value2; 
         }
