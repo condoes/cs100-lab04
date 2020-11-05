@@ -4,8 +4,9 @@
 #include "Mult_test.hpp"
 #include "Div_test.hpp"
 #include "sub_test.hpp"
-#include "add.hpp"
-#include "pow.hpp"
+#include "add_test.hpp"
+#include "pow_test.hpp"
+#include "Rand_test.hpp"
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
